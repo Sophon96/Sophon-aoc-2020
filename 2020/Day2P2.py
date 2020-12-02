@@ -7,6 +7,7 @@ with open('../input/aoc-2.in', 'r') as fin:
 		letter = split[1].strip(":")
 		# DEBUG
 		# print(split, bounds, passwd, letter)
-		if bounds[1] >= passwd.count(letter) >= bounds[0]:
+		# Finally got to use that stupid ^ XOR symbol
+		if (passwd[bounds[0] - 1] == letter) ^ (passwd[bounds[1] - 1] == letter):
 			valid += 1
 print(valid)

@@ -1,4 +1,4 @@
-inp = open('aoc-1.in', 'r').readlines()
+inp = open('../input/aoc-1.in', 'r').readlines()
 inp = [int(thing) for thing in inp]
 print(inp)
 # sum1 = int()
