@@ -27,6 +27,7 @@ c = tree1(5)
 d = tree1(7)
 # I used e back when I intended to use tree1() to do everything,
 # but that didn't work, so I used f and don't feel like changing it to e
+
 f = tree2()
 total = a * b * c * d * f
 print(total)
