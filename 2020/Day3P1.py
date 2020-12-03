@@ -5,9 +5,9 @@ width = len(inp[0])
 # print(width)
 # print(bottom)
 count = 0
-for i in inp[1::]:
+for i in inp[0::]:
 	# print(inp.index(i))
-	ind = ((inp.index(i) * 3) - 1) % width
+	ind = (inp.index(i) * 3) % width
 	print(ind)
 	if i[ind] == '#':
 		count += 1
