@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 inp = open('../input/aoc-1.in', 'r').readlines()
 inp = [int(thing) for thing in inp]
 

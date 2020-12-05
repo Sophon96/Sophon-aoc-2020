@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 inp = list(map(list, map(str.strip, open('../input/aoc-3.in', 'r').readlines())))
 
 width = len(inp[0])

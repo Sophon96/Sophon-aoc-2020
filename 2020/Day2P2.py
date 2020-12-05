@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 valid = 0
 with open('../input/aoc-2.in', 'r') as fin:
 	for i in fin:
