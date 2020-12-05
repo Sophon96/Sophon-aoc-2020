@@ -58,15 +58,15 @@ def dictChecker(inp):
 	if 2002 < int(inp['byr']) or int(inp['byr']) < 1920:
 		vals += 1
 	if 2020 < int(inp['iyr']) or int(inp['iyr']) < 2010:
-		vals += 1
+		vals += 2
 	if 2030 < int(inp['eyr']) or int(inp['eyr']) < 2020:
-		vals += 1
+		vals += 4
 	if hgt[-1] == 'n':
 		if int(hgt.strip('in')) < 59 or int(hgt.strip('in')) > 76:
-			vals += 1
+			vals += 8
 	if hgt[-1] == 'm':
 		if int(hgt.strip('cm')) < 150 or int(hgt.strip('cm')) > 193:
-			vals += 1
+			vals += 16
 	if len(inp['hcl']) != 7 or inp['hcl'][0] != '#'\
 		or inp['hcl'][1] not in hclvals\
 		or inp['hcl'][2] not in hclvals\
@@ -74,14 +74,18 @@ def dictChecker(inp):
 		or inp['hcl'][4] not in hclvals\
 		or inp['hcl'][5] not in hclvals\
 		or inp['hcl'][6] not in hclvals:
-		vals += 1
+		vals += 32
 	if inp['ecl'] not in eclvals:
-		vals += 1
+		vals += 64
 	if len(inp['pid']) != 9:
-		vals += 1
+		vals += 128
+	if hgt[-1] != 'n' and hgt[-1] != 'm':
+		vals += 256
 	if vals > 0:
+		# print(hex(vals))
 		return False
 	else:
+		# print(hex(vals))
 		return True
 
 
@@ -91,8 +95,9 @@ for i in big:
 	if not inputChecker(clean):
 		continue
 	cleanDict = listToDict(clean)
-	print(cleanDict)
+	# print(cleanDict)
 	if dictChecker(cleanDict):
+		# print(i)
 		count += 1
 	# if inputChecker(clean):
 		# count += 1
