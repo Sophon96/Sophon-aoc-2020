@@ -9,7 +9,8 @@ with open('../input/aoc-4.in', 'r') as fin:
 		else:
 			big.append(tmp)
 			tmp = list()
-print(big)
+	big.append(tmp)
+# print(big)
 
 
 def inputParser(inp):
